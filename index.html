@@ -35,9 +35,15 @@
           </label>
         </div>
 
-        <div class="col-4"> <!-- Ingreso fecha ensamble-->
+        <div class="col-3"> <!-- Ingreso fecha ensamble-->
           <label>Fecha de ensamblaje
             <input type="date" name="assembly_date" />
+          </label>
+        </div>
+
+        <div class="col-3"> <!-- Ingreso nombre del tecnico -->
+          <label>Rig
+            <input name="Job" placeholder="Name of Job" />
           </label>
         </div>
 
@@ -53,16 +59,7 @@
           </label>
         </div>
 
-        <!-- ↓ separador para empezar una nueva fila -->
-        <div class="col-12"></div>
-
-        <div class="col-3">
-          <label>Bias Unit S/N
-            <input name="bias_sn" required placeholder="Ej: BU-XXXXXX" />
-          </label>
-        </div>
-
-        <div class="col-3"> <!-- BU Type -->
+        <div class="col-4"> <!-- BU Type -->
           <label>Tool Size
             <select name="bu_type" required>
               <option value="" selected disabled>Seleccionar...</option>
@@ -80,6 +77,17 @@
             </select>
           </label>
         </div>
+
+        <!-- ↓ separador para empezar una nueva fila -->
+        <div class="col-12"></div>
+
+        <div class="col-4">
+          <label>Bias Unit S/N
+            <input name="bias_sn" required placeholder="Ej: BU-XXXXXX" />
+          </label>
+        </div>
+
+
 
         <div class="col-3"> <!-- BU Type -->
           <label># Grooves
@@ -99,7 +107,7 @@
           </label>
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
           <label>Extension Sub S/N
             <input name="ext_sub_sn" placeholder="Ej: ES-YYYYYY" />
           </label>
@@ -121,19 +129,6 @@
          <div class="col-3">
           <label>Extension Sub Measurement
             <input name="bias_sn" required placeholder="Ej: Extension Sub-XXXX mm" />
-          </label>
-        </div>
-
-        
-
-        <div class="col-6">
-          <label>Clamp plate installed by
-            <input name="clamp_plate_by" />
-          </label>
-        </div>
-        <div class="col-6">
-          <label>Sleeves installed by
-            <input name="sleeves_by" />
           </label>
         </div>
       </div>
