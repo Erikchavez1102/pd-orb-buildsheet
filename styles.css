@@ -1,0 +1,80 @@
+:root{
+  --bg:#0b1020; --card:#ffffff; --ink:#0f172a; --muted:#6b7280; --accent:#2563eb;
+  --line:#e5e7eb; --ok:#16a34a; --warn:#f59e0b; --err:#dc2626;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,#0b1020 0%,#101836 60%,#0b1020 100%);
+  color:var(--ink);
+}
+header{
+  padding:24px 16px; color:#eaf2ff; text-align:center;
+}
+header h1{margin:.2rem 0;font-size:1.4rem;letter-spacing:.5px}
+header p{margin:0;opacity:.9}
+.wrapper{max-width:1100px; margin:0 auto; padding:16px}
+.card{
+  background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:18px; margin-bottom:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+.title{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:12px;
+}
+.title h2{font-size:1.05rem; margin:0}
+.grid{display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
+label{font-size:.82rem; color:#374151}
+input, select, textarea{
+  width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--line);
+  background:#fff; color:var(--ink); outline:none;
+}
+textarea{min-height:80px; resize:vertical}
+.col-3{grid-column:span 3}
+.col-4{grid-column:span 4}
+.col-6{grid-column:span 6}
+.col-8{grid-column:span 8}
+.col-12{grid-column:span 12}
+
+.toolbar{display:flex; flex-wrap:wrap; gap:8px}
+.toolbar.center{justify-content:center; margin-top:10px}
+
+.btn{
+  border:1px solid var(--line); background:#fff; color:#111827;
+  padding:10px 14px; border-radius:12px; cursor:pointer;
+}
+.btn.primary{background:var(--accent); color:#fff; border-color:transparent}
+.btn.ghost{background:transparent; color:#eaf2ff; border-color:#334155}
+.btn.ok{background:var(--ok); color:#fff; border-color:transparent}
+.btn.warn{background:var(--warn); color:#111827; border-color:transparent}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+
+table{width:100%; border-collapse:collapse; border:1px solid var(--line)}
+th, td{border-top:1px solid var(--line); border-right:1px solid var(--line); padding:8px; font-size:.9rem}
+th:last-child, td:last-child{border-right:none}
+thead th{background:#f8fafc; text-align:left}
+tfoot td{background:#fcfcff}
+
+.checklist{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px}
+.checklist label{display:flex; gap:8px; align-items:center; font-size:.9rem}
+.muted{color:var(--muted); font-size:.85rem}
+
+.footer-note{color:#cbd5e1; font-size:.9rem; text-align:center; padding:18px 12px}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(6,1fr)}
+  .col-8{grid-column:span 6}
+  .col-6{grid-column:span 6}
+  .col-4{grid-column:span 6}
+  .col-3{grid-column:span 6}
+}
+
+/* Print styles (para PDF bonito con Ctrl/Cmd+P) */
+@media print{
+  body{background:#fff}
+  header{color:#000; background:#fff; border-bottom:2px solid #000}
+  .btn, .toolbar, .footer-note{display:none !important}
+  .card{box-shadow:none; page-break-inside:avoid}
+}
