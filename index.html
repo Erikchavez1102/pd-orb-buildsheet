@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Build Sheet — PDORB Bias Unit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>BUILD SHEET POWER DRIVE ORBIT</h1>
+    <div class="toolbar center">
+      <button class="btn ghost" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <!-- Encabezado general -->
+    <section class="card">
+      <div class="title">
+        <h2>Datos generales</h2>
+        <div class="toolbar">
+          <button class="btn" id="btnLoad">Cargar borrador</button>
+          <button class="btn warn" id="btnClear">Limpiar</button>
+          <button class="btn ok" id="btnSave">Guardar borrador</button>
+          <button class="btn primary" id="btnExport">Exportar JSON</button>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <div class="col-4"> <!-- Ingreso nombre del tecnico -->
+          <label>BU Assembled By
+            <input name="bu_assembled_by" placeholder="Técnico responsable" />
+          </label>
+        </div>
+
+        <div class="col-4"> <!-- Ingreso fecha ensamble-->
+          <label>Fecha de ensamblaje
+            <input type="date" name="assembly_date" />
+          </label>
+        </div>
+
+        <div class="col-4"> <!-- BU Type -->
+          <label>BU Type
+            <select name="bu_type" required>
+              <option value="" selected disabled>Seleccionar...</option>
+              <option value="PDORB4">PDORB4</option>
+              <option value="PDORB6">PDORB6</option>
+              <option value="PDORB8">PDORB8</option>
+              <option value="PDORB9">PDORB9</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- ↓ separador para empezar una nueva fila -->
+        <div class="col-12"></div>
+
+        <div class="col-3">
+          <label>Bias Unit S/N
+            <input name="bias_sn" required placeholder="Ej: BU-XXXXXX" />
+          </label>
+        </div>
+
+        <div class="col-3"> <!-- BU Type -->
+          <label>Tool Size
+            <select name="bu_type" required>
+              <option value="" selected disabled>Seleccionar...</option>
+              <option value="6 inch">6"</option>
+              <option value="6 1/8 inch">6 1/8"</option>
+              <option value="8 1/2 inch">8 1/2"</option>
+              <option value="8 3/4 inch">8 3/4"</option>
+              <option value="10 5/8 inch">10 5/8"</option>
+              <option value="12 1/2 inch">12 1/2"</option>
+              <option value="14 inch">14"</option>
+              <option value="16 inch">16"</option>
+              <option value="17 inch">17"</option>
+              <option value="21 inch">21"</option>
+              <option value="26 inch">26"</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="col-3"> <!-- BU Type -->
+          <label># Grooves
+            <select name="bu_type" required>
+              <option value="" selected disabled>Seleccionar...</option>
+              <option value="1 groove">1</option>
+              <option value="2 groove">2</option>
+              <option value="3 groove">3</option>
+              <option value="4 groove">4</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="col-3">
+          <label>Bias Unit Measurement
+            <input name="bias_sn" required placeholder="Ej: BU-XXXX mm" />
+          </label>
+        </div>
+
+        <div class="col-3">
+          <label>Extension Sub S/N
+            <input name="ext_sub_sn" placeholder="Ej: ES-YYYYYY" />
+          </label>
+        </div>
+
+        
+        <div class="col-3"> <!-- BU Type -->
+          <label># Grooves
+            <select name="bu_type" required>
+              <option value="" selected disabled>Seleccionar...</option>
+              <option value="1 groove">1</option>
+              <option value="2 groove">2</option>
+              <option value="3 groove">3</option>
+              <option value="4 groove">4</option>
+            </select>
+          </label>
+        </div>
+
+         <div class="col-3">
+          <label>Extension Sub Measurement
+            <input name="bias_sn" required placeholder="Ej: Extension Sub-XXXX mm" />
+          </label>
+        </div>
+
+        
+
+        <div class="col-6">
+          <label>Clamp plate installed by
+            <input name="clamp_plate_by" />
+          </label>
+        </div>
+        <div class="col-6">
+          <label>Sleeves installed by
+            <input name="sleeves_by" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partes & números de serie -->
+    <section class="card">
+      <div class="title">
+        <h2>Partes & números de serie</h2>
+      </div>
+      <div class="grid">
+        <div class="col-4">
+          <label>Trefoil Distributor (Spider) S/N
+            <input name="trefoil_sn" />
+          </label>
+        </div>
+
+        <div class="col-4">
+          <label>Bearing Housing/Filter Assembly By
+            <input name="bh_filter_by" />
+          </label>
+        </div>
+        <div class="col-4">
+          <label>Bearing Housing/Filter Assembly S/N
+            <input name="bh_filter_sn" />
+          </label>
+        </div>
+
+        <div class="col-6">
+          <label>Control Shaft S/N
+            <input name="control_shaft_sn" />
+          </label>
+        </div>
+        <div class="col-6">
+          <label>Notas
+            <input name="notes" placeholder="Observaciones relevantes" />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alturas / Alineación del Control Shaft -->
+    <section class="card">
+      <div class="title">
+        <h2>Control Shaft — Height / Alignment</h2>
+      </div>
+      <div class="grid">
+        <div class="col-12">
+          <table>
+            <thead>
+              <tr>
+                <th>Posición</th>
+                <th>Valor</th>
+                <th>Unidad</th>
+                <th>Observación</th>
+              </tr>
+            </thead>
+            <tbody id="tblCS">
+              <tr>
+                <td>Top</td>
+                <td><input name="cs_top_val" placeholder="mm" /></td>
+                <td>
+                  <select name="cs_top_unit">
+                    <option>mm</option><option>in</option>
+                  </select>
+                </td>
+                <td><input name="cs_top_obs" placeholder="Opcional" /></td>
+              </tr>
+              <tr>
+                <td>Middle</td>
+                <td><input name="cs_mid_val" placeholder="mm" /></td>
+                <td>
+                  <select name="cs_mid_unit">
+                    <option>mm</option><option>in</option>
+                  </select>
+                </td>
+                <td><input name="cs_mid_obs" placeholder="Opcional" /></td>
+              </tr>
+              <tr>
+                <td>Bottom</td>
+                <td><input name="cs_bot_val" placeholder="mm" /></td>
+                <td>
+                  <select name="cs_bot_unit">
+                    <option>mm</option><option>in</option>
+                  </select>
+                </td>
+                <td><input name="cs_bot_obs" placeholder="Opcional" /></td>
+              </tr>
+              <tr>
+                <td>Shaft #</td>
+                <td><input name="cs_shaft_no" placeholder="ID o # de eje" /></td>
+                <td><input disabled value="—" /></td>
+                <td><input name="cs_shaft_obs" placeholder="Opcional" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grooves + Cuerpos -->
+    <section class="card">
+      <div class="title">
+        <h2>Grooves & Cuerpos</h2>
+      </div>
+      <div class="grid">
+        <div class="col-12">
+          <table id="tblGrooves">
+            <thead>
+              <tr>
+                <th>No. Grooves</th>
+                <th>Bias Unit Body — BU end</th>
+                <th>Bias Unit Body — CC end</th>
+                <th>Extension Sub — BU end</th>
+                <th>Extension Sub — CC end</th>
+                <th>Obs.</th>
+                <th style="width:48px">—</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input name="grooves_0_count" type="number" min="0" placeholder="0" /></td>
+                <td><input name="grooves_0_bu_end" placeholder="dato" /></td>
+                <td><input name="grooves_0_cc_end" placeholder="dato" /></td>
+                <td><input name="grooves_0_es_bu" placeholder="dato" /></td>
+                <td><input name="grooves_0_es_cc" placeholder="dato" /></td>
+                <td><input name="grooves_0_obs" placeholder="Opcional" /></td>
+                <td><button class="btn warn" onclick="removeRow(this)">✕</button></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="7">
+                  <button class="btn" onclick="addGrooveRow()">➕ Agregar fila</button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklist rápida -->
+    <section class="card">
+      <div class="title">
+        <h2>Checklist de verificación</h2>
+      </div>
+      <div class="checklist">
+        <label><input type="checkbox" name="chk_spider" /> Spider inspeccionado y limpio</label>
+        <label><input type="checkbox" name="chk_pads" /> Pads revisados (desgaste/bolas)</label>
+        <label><input type="checkbox" name="chk_bearing" /> Bearing/Filter verificado</label>
+        <label><input type="checkbox" name="chk_clamp" /> Clamp plate instalado</label>
+        <label><input type="checkbox" name="chk_sleeves" /> Sleeves instalados</label>
+        <label><input type="checkbox" name="chk_torque" /> Torque aplicado (OST/BOM)</label>
+      </div>
+      <p class="muted" style="margin-top:8px">
+        *Recuerda adjuntar la evidencia y registrar los torques en el sistema oficial.
+      </p>
+    </section>
+
+    <!-- Firmas -->
+    <section class="card">
+      <div class="title"><h2>Firmas</h2></div>
+      <div class="grid">
+        <div class="col-6">
+          <label>Firma técnico (nombre)
+            <input name="sign_tech" placeholder="Nombre legible" />
+          </label>
+        </div>
+        <div class="col-6">
+          <label>Fecha firma técnico
+            <input type="date" name="sign_tech_date" />
+          </label>
+        </div>
+        <div class="col-6">
+          <label>Firma supervisor (nombre)
+            <input name="sign_sup" placeholder="Nombre legible" />
+          </label>
+        </div>
+        <div class="col-6">
+          <label>Fecha firma supervisor
+            <input type="date" name="sign_sup_date" />
+          </label>
+        </div>
+        <div class="col-12">
+          <label>Comentarios finales
+            <textarea name="final_comments" placeholder="Comentarios o advertencias relevantes..."></textarea>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      PD/ORB Build Sheet • Prototipo HTML/CSS/JS • Guarda/Imprime y expórtalo a JSON
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
